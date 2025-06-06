@@ -23,6 +23,10 @@ resource "null_resource" "create_kafka_topics" {
       docker exec kafka kafka-topics.sh --create --if-not-exists --topic transaction-hold-commands --bootstrap-server localhost:9092 --partitions 2 --replication-factor 1;
       docker exec kafka kafka-topics.sh --create --if-not-exists --topic account-commands --bootstrap-server localhost:9092 --partitions 2 --replication-factor 1;
       docker exec kafka kafka-topics.sh --create --if-not-exists --topic transfer-saga-events --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+	  docker exec kafka kafka-topics.sh --create --if-not-exists --topic logs --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1;
+	  docker exec kafka kafka-topics.sh --create --if-not-exists --topic api-gateway-requests --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1;
+	  docker exec kafka kafka-topics.sh --create --if-not-exists --topic api-gateway-responses --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1;
+
     EOT
   }
 }
