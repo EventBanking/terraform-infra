@@ -13,6 +13,9 @@ The following topics are also created:
 - transaction-hold-commands 
 - account-commands 
 - transfer-saga-events 
+- logs
+- api-gateway-requests
+- api-gateway-responses
 
 ---
 
